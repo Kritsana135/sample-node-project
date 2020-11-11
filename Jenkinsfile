@@ -4,10 +4,11 @@ pipeline {
 
     stages {
 
-        stage('Init'){
+        stage('Install'){
             steps {
-                echo 'Init'
+                echo 'install node modules'
                 echo '******************************'
+                sh 'npm install'
             }
         }
 
@@ -18,18 +19,5 @@ pipeline {
             }
         }
 
-        stage('Yarn Build') {
-            steps {
-                echo 'Yarn Build'
-                echo '******************************'
-            }
-        }
-
-        stage('Deploy') {
-            steps{
-                echo 'Deploy'
-                echo '******************************'
-            }
-        }
     }
 }
